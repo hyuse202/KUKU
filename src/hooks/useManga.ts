@@ -4,6 +4,7 @@ import {MANGA} from '@consumet/extensions'
 export default function useManga(){
     let API ={
         popular: CONSUMET_URI + "/advanced-search",
+        trending: CONSUMET_URI + "/advanced-search?sort=[%22TRENDING_DESC%22]",
         info: CONSUMET_MANGA_URI + "/info",
         mangahere: CONSUMET_CHAPTER_URI + "/mangahere/read",
         mangadex: CONSUMET_CHAPTER_URI + "/mangadex/read"
@@ -27,11 +28,10 @@ export default function useManga(){
     return data;
   }
   async function getTrending(){
-    const data = await axios.get(API.popular, {
+    const data = await axios.get(API.trending, {
       params:{
         type:"MANGA",
-        perpage:1,
-        sort:["TRENDING_DESC"]
+        perPage:21,
       }
     })
     return data;
