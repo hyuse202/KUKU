@@ -2,7 +2,6 @@ import React from "react";
 import { redirect } from "next/navigation";
 import useManga from "@/hooks/useManga";
 import Card from "@/components/Card";
-import { ISearchAnime } from "@/@types/EnimeType";
 
 async function page({ searchParams }: any) {
   const { getSearch } = useManga();

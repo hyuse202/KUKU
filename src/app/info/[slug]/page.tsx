@@ -66,7 +66,7 @@ async function page({params}: Props) {
           </div>
         </div>
       </div>
-      <div className="flex flex-row w-full">
+      <div className="flex flex-col w-full">
       <ProviderList />
       <ChapterList {...info.data.chapters}/>
       </div>
