@@ -28,12 +28,12 @@ export default function ChapterList(list:ChapterProps[]){
                 <p
               onClick={
                 () => router.push(
-                  `/read/mangadex/${encodeURIComponent(e.id)}`
+                  `/read/mangareader/${encodeURIComponent(e.id)}`
                   )
                 }
                 className="w-[80%] cursor-pointer">{e.title}
                 </p>
-                <p className="">{e.releasedDate}</p>
+                <p className="">{e.chapterNumber}</p>
               </span>
             )
             )
