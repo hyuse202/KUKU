@@ -33,6 +33,7 @@ async function page({params}: Props) {
           src = {info.data.image}
           className="rounded object-cover w-1/5 ml-8"
         />
+
         <div className="flex flex-col space-y-4">
           <p className="text-2xl font-semibold mt-4">{info.data.title.romaji}</p>
           <p className="">{info.data.title.english}</p>
@@ -41,7 +42,7 @@ async function page({params}: Props) {
                 info.data.genres.map(
                   (e:any) => (
                     <span className="rounded-sm bg-zinc-500 mb-auto text-base p-[0_0.375rem]">{e}</span>
-                  )
+                    )
                 )
               }
           </div>
