@@ -46,7 +46,7 @@ async function page({params}: Props) {
                 )
               }
           </div>
-          <p>{info.data.description}</p>
+          <p dangerouslySetInnerHTML={{ __html: info.data.description}}></p>
           <div className="gap-x-16 flex flex-row">
              <div>
                 <p>Rate</p>   

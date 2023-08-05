@@ -49,7 +49,8 @@ export default function useManga(){
     const data = await axios.get(API.popular, {
       params:{
         type:"MANGA",
-        query: query
+        query: query,
+        perPage:42,
       }
     });
     return data;

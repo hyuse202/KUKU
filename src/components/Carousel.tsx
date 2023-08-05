@@ -58,7 +58,7 @@ function CarouselSingle({
           {title}
         </p>
         <p
-          className="font-extralight text-sm lg:text-md text-gray-200 leading-relaxed line-clamp-6"
+          className="font-normal text-base lg:text-md leading-relaxed line-clamp-6"
           dangerouslySetInnerHTML={{ __html: description }}
         ></p>
         <div>
@@ -66,7 +66,7 @@ function CarouselSingle({
             href={`/anime/${episodeId}/watch`}
             className="btn btn-sm btn-outline lg:btn-md"
           >
-            Watch Now
+            Read Now
           </Link>
         </div>
       </div>

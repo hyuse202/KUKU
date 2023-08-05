@@ -17,7 +17,7 @@ function Search() {
     const delayDebounceFn = setTimeout(async () => {
       setLoading(true);
       const data = await getSearch(search);
-      setSearchFilter(data.data.results.slice(0, 6));
+      setSearchFilter(data.data.results.slice(0, 4));
       setLoading(false);
       
     }, 1000);
@@ -33,9 +33,9 @@ function Search() {
 
   return (
     <>
-      <div className="search-container relative">
-        <label className="relative block">
-          <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+      <div className="relative w-full">
+        <label className="w-full relative block">
+          <span className="absolute inset-y-0 right-0 flex items-center pr-3">
             <svg
               className="h-5 w-5 fill-white"
               xmlns="http://www.w3.org/2000/svg"
@@ -49,8 +49,8 @@ function Search() {
             </svg>
           </span>
           <input
-            className="w-full bg-transparent placeholder:font-italitc rounded-lg py-2 pl-12 pr-12 focus:outline-none border-2 focus:border-white border-gray-400"
-            placeholder="Enter your keyword"
+            className="w-full bg-transparent placeholder:font-italitc rounded-lg py-2 pl-4 pr-12 focus:outline-none border-2 focus:border-white border-gray-400"
+            placeholder="Search Manga"
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -79,7 +79,7 @@ function Search() {
                   href={`/search?q=${encodeURIComponent(search)}`}
                   onClick={handleSearchCallback}
                 >
-                  See More
+                  More ...
                 </Link>
               </>
             ) : (

@@ -60,7 +60,7 @@ function Header() {
               </li>
           </ul>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="hidden w-full lg:flex">
           <div className="mr-1 w-full flex flex-row gap-4">
             <SearchAnime />
             <a

@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { FaPlay } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -55,14 +54,10 @@ function Card({
             alt={title}
             className="w-full h-[250px] lg:h-[300px] delay-50 object-cover rounded-lg"
           />
-          <div className="absolute bottom-0 p-2 flex flex-col w-full bg-gradient-to-b from-transparent to-pink-900">
-            <p className="font-extrabold text-sm capitalize truncate">
+          <div className="absolute bottom-0 p-1 flex flex-col w-full bg-gradient-to-b from-transparent to-purple-900">
+            <p className="font-extrabold text-lg capitalize truncate text-center">
               {title}
             </p>
-            <div className="flex item-center justify-between">
-              <p className="text-xs">{additional}</p>
-              <FaPlay />
-            </div>
           </div>
         </div>
       </motion.div>
