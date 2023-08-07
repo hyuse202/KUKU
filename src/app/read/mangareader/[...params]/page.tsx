@@ -31,19 +31,19 @@ async function page({params, searchParams}: Props) {
     while(index--)
       List.push(list[index])
   const res:any = await getChapterManga(id, "mangareader")
-  console.log(res.data)
+  console.log(id, res.data)
   return(
       <div className="">
         <div> {anilist_id} {id} {chapter_index}</div>
         {/* <Bar list = {List} chapterIndex = {chapter_index} anilistId = {anilist_id}/> */}
-        {
+        {/* {
         res.data.map(
           (e:any) => (
 
               <img src={e.img} alt="aaa" className="mx-auto"/>
           )
         )
-          }
+          } */}
       </div>
   );
 }
