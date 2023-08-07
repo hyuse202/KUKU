@@ -30,8 +30,8 @@ async function page({params, searchParams}: Props) {
     }
     while(index--)
       List.push(list[index])
-  const res:any = await getChapterManga(id, "mangareader")
-  console.log(id, res.data)
+  // const res:any = await getChapterManga(id, "mangareader")
+  console.log(id)
   return(
       <div className="">
         <div> {anilist_id} {id} {chapter_index}</div>
