@@ -28,7 +28,7 @@ export default function ChapterList({list, id}: any){
                 <p
               onClick={
                 () => router.push(
-                  `/read/mangareader/${id}/${encodeURIComponent(e.id)}?index=${index}`
+                  `/read/mangareader/${id}?index=${encodeURIComponent(e.id)}`
                   )
                 }
                 className="w-[80%] cursor-pointer">{e.title}
