@@ -8,7 +8,7 @@ export default async function Home() {
   const trendingMangas = await getTrending()
   return (
     <div>
-      <Carousel spotlightInfo={popularAnimes.data.results.slice(0, 10)} />
+      <Carousel spotlightInfo={popularAnimes.data.results} />
       <div className="xl:flex justify-between">
         <div className="lg:m-10 mt-10 flex flex-col items-center justify-center lg:items-start lg:justify-start">
           <p className="text-xl mb-10 uppercase font-bold text-pink-200 tracking-widest">

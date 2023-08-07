@@ -21,11 +21,10 @@ function Carousel({ spotlightInfo }: CarouselProps) {
       {spotlightInfo.map((anime:any, index: number) => (
         <CarouselSingle
           key={index}
-          id={index}
+          id={anime.id}
           src={anime.cover}
           title={anime.title.english}
           description={anime.description}
-          episodeId={anime.slug}
         />
       ))}
     </ReactCarousel>
@@ -33,11 +32,10 @@ function Carousel({ spotlightInfo }: CarouselProps) {
 }
 
 type CarouselSingleProps = {
-  id: number;
+  id: string;
   src: string;
   title: string;
   description: string;
-  episodeId: string;
 };
 
 function CarouselSingle({
@@ -45,7 +43,6 @@ function CarouselSingle({
   src,
   title,
   description,
-  episodeId,
 }: CarouselSingleProps) {
   return (
     <div id={`slide${id}`} className="relative w-full h-[300px] lg:h-[700px]">
@@ -63,7 +60,7 @@ function CarouselSingle({
         ></p>
         <div>
           <Link
-            href={`/anime/${episodeId}/watch`}
+            href={`/info/${encodeURIComponent(id)}`}
             className="btn btn-sm btn-outline lg:btn-md"
           >
             Read Now
