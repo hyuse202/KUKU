@@ -16,27 +16,28 @@ export async function generateMetadata(): Promise<Metadata> {
   }; 
 }
 async function page({params, searchParams}: Props) {
-  const {getInfo} = useManga();
   const anilist_id = params.params[0];
   const chapter_index = parseInt(searchParams.index)
   const id = decodeURIComponent(params.params[1])
-  const info:any = await getInfo(anilist_id, "mangareader");
-  const list = info.data.chapters
-  let List = []
-  let index = 0;
-    while(true){
-      if(list[index] == undefined) 
-        break
-        index++
-    }
-    while(index--)
-      List.push(list[index])
+  const {getInfo} = useManga();
+  // const info:any = await getInfo(anilist_id, "mangareader");
+  // const list = info.data.chapters
+  // let List = []
+  // let index = 0;
+  //   while(true){
+  //     if(list[index] == undefined) 
+  //       break
+  //       index++
+  //   }
+  //   while(index--)
+  //     List.push(list[index])
 
-  const mangadex = new MANGA.MangaReader();
-  const res = await mangadex.fetchChapterPages(id)
+  // const mangadex = new MANGA.MangaReader();
+  // const res = await mangadex.fetchChapterPages(id)
   return(
       <div className="">
-        {/* <Bar list = {List} chapterIndex = {chapter_index} anilistId = {anilist_id}/> */}
+        <div>{anilist_id} {chapter_index} {id}</div>
+        {/* <Bar list = {List} chapterIndex = {chapter_index} anilistId = {anilist_id}/>
         {
         res.map(
           (e:any) => (
@@ -44,7 +45,7 @@ async function page({params, searchParams}: Props) {
               <img src={e.img} alt="aaa" className="mx-auto"/>
           )
         )
-          }
+          } */}
       </div>
   );
 }
