@@ -1,23 +1,13 @@
 import { CONSUMET_URI, CONSUMET_MANGA_URI, CONSUMET_CHAPTER_URI } from "@/utils/constants"
 import axios from 'axios'
-import {MANGA} from '@consumet/extensions'
+import { Sora } from "next/font/google";
 export default function useManga(){
     let API ={
         popular: CONSUMET_URI + "/advanced-search",
         trending: CONSUMET_URI + "/advanced-search?sort=[%22TRENDING_DESC%22]",
         info: CONSUMET_MANGA_URI + "/info",
-        mangahere: CONSUMET_CHAPTER_URI + "/mangahere/read",
-        mangadex: CONSUMET_CHAPTER_URI + "/mangadex/read"
+        read: CONSUMET_CHAPTER_URI,
     }
-  // async function getRecent() {
-  //   const data = await axios.get(API.recent,{
-  //     params:{
-  //       type:"MANGA"
-  //     }
-  //   })
-  //   return data;
-  // }
-
   async function getPopular() {
     const data = await axios.get(API.popular,{
       params:{
@@ -55,27 +45,21 @@ export default function useManga(){
     });
     return data;
   }
-  async function getChapterMangahere(id:string){
-    const data = await axios.get(API.mangahere, {
+  async function getChapterManga(id:string, source: string){
+    const data = await axios.get(API.read, {
         params:{
-          chapterId: id
+          chapterId: id,
+          provider: source
         }
     })
     return data;
   }
-  async function getChapterMangadex(id:string){
-    const mangadex = new MANGA.MangaDex()
-    const res = mangadex.fetchChapterPages(id).then(data => {
-    return data
-})
-  }
+  
   return {
-    // getRecent,
     getTrending,
     getPopular,
     getInfo,
     getSearch,
-    getChapterMangahere,
-    getChapterMangadex
+    getChapterManga,
   };
 }

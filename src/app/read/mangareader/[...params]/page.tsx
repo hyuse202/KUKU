@@ -1,6 +1,5 @@
 import React from "react";
 import useManga from "@/hooks/useManga";
-import {MANGA} from '@consumet/extensions'
 import { Metadata } from "next";
 import Bar from "./partials/Bar";
 type Props = {
@@ -19,7 +18,7 @@ async function page({params, searchParams}: Props) {
   const anilist_id = params.params[0];
   const chapter_index = parseInt(searchParams.index)
   const id = decodeURIComponent(params.params[1])
-  const {getInfo} = useManga();
+  const {getInfo, getChapterManga} = useManga();
   const info:any = await getInfo(anilist_id, "mangareader");
   const list = info.data.chapters
   let List = []
@@ -31,15 +30,14 @@ async function page({params, searchParams}: Props) {
     }
     while(index--)
       List.push(list[index])
-
-  const mangadex = new MANGA.MangaReader();
-  const res = await mangadex.fetchChapterPages(id)
+  const res:any = await getChapterManga(id, "mangareader")
+  console.log(res.data)
   return(
       <div className="">
         <div> {anilist_id} {id} {chapter_index}</div>
         {/* <Bar list = {List} chapterIndex = {chapter_index} anilistId = {anilist_id}/> */}
         {
-        res.map(
+        res.data.map(
           (e:any) => (
 
               <img src={e.img} alt="aaa" className="mx-auto"/>
