@@ -36,7 +36,7 @@ async function page({params, searchParams}: Props) {
   const res = await mangadex.fetchChapterPages(id)
   return(
       <div className="">
-        <Bar list = {List} chapterIndex = {chapter_index} anilistId = {anilist_id}/>
+        {/* <Bar list = {List} chapterIndex = {chapter_index} anilistId = {anilist_id}/> */}
         {
         res.map(
           (e:any) => (

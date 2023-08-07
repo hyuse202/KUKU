@@ -3,7 +3,6 @@ import useManga from "@/hooks/useManga";
 import { Metadata } from "next";
 import ProviderList from "@/components/ProviderList"
 import ChapterList from "@/components/ChapterList";
-import { FaBackward, FaForward } from "react-icons/fa";
 type Props = {
   params: { slug: string };
 };
