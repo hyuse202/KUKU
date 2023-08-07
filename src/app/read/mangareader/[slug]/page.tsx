@@ -29,11 +29,10 @@ async function page({params, searchParams}: Props) {
     }
     while(index--)
       List.push(list[index])
-  const res:any = await getChapterManga(id, "mangareader")
+    const res:any = await getChapterManga(id, "mangareader")
   return(
       <div className="">
-        <div> {anilist_id} {id}</div>
-        {/* <Bar list = {List} chapterIndex = {chapter_index} anilistId = {anilist_id}/> */}
+        <Bar list = {List} id = {id} anilistId = {anilist_id}/>
         {
         res.data.map(
           (e:any) => (
