@@ -3,9 +3,9 @@ import useManga from "@/hooks/useManga";
 import { Metadata } from "next";
 import ProviderList from "@/components/ProviderList"
 import ChapterList from "@/components/ChapterList";
+import { FaBackward, FaForward } from "react-icons/fa";
 type Props = {
   params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 const defaultSource = "mangareader"
@@ -69,7 +69,7 @@ async function page({params}: Props) {
       </div>
       <div className="flex flex-col w-full">
       <ProviderList />
-      <ChapterList {...info.data.chapters}/>
+      <ChapterList list = {info.data.chapters} id = {params.slug}/>
       </div>
     </section>
   );

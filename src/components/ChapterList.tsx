@@ -6,7 +6,7 @@ interface ChapterProps {
   title: string;
   releaseDate: string;  
 };
-export default function ChapterList(list:ChapterProps[]){
+export default function ChapterList({list, id}: any){
     const {getInfo} = useManga()
     const router = useRouter()
     let List = [] as ChapterProps[]
@@ -23,17 +23,17 @@ export default function ChapterList(list:ChapterProps[]){
           
         {
               List.map(
-              (e:any) => (
+              (e:any, index:number) => (
               <span className="align-center flex flex-row hover:bg-white/20 text-gray-200 transition duration-300 rounded p-[0_0.375rem]">
                 <p
               onClick={
                 () => router.push(
-                  `/read/mangareader/${encodeURIComponent(e.id)}`
+                  `/read/mangareader/${id}/${encodeURIComponent(e.id)}?index=${index}`
                   )
                 }
                 className="w-[80%] cursor-pointer">{e.title}
                 </p>
-                <p className="">{e.chapterNumber}</p>
+                {/* <p className="">{e.chapterNumber}</p> */}
               </span>
             )
             )

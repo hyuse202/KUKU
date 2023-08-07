@@ -10,7 +10,6 @@ async function page({ searchParams }: any) {
     redirect("/");
   }
   const animeInfo:any =  await getSearch(searchParams.q);
-  // console.log(animeInfo.data)
   return (
     <div className="m-2 lg:m-10 flex flex-col items-center">
       <p className="text-2xl lg:text-3xl mt-20">
