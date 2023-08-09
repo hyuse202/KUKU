@@ -2,6 +2,7 @@ import React from "react";
 import useManga from "@/hooks/useManga";
 import { Metadata } from "next";
 import Bar from "./partials/Bar";
+import SideBar from "./partials/SideBar";
 type Props = {
   params: {slug: string};
   searchParams: { [key: string]: string};
@@ -14,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   }; 
 }
-async function page({params, searchParams}: Props) {
+async function Page({params, searchParams}: Props) {
   const anilist_id = params.slug;
   const id = decodeURIComponent(searchParams.index)
   const {getInfo, getChapterManga} = useManga();
@@ -31,18 +32,20 @@ async function page({params, searchParams}: Props) {
       List.push(list[index])
     const res:any = await getChapterManga(id, "mangareader")
   return(
-      <div className="">
-        <Bar list = {List} id = {id} anilistId = {anilist_id}/>
-        {
-        res.data.map(
-          (e:any) => (
+      <div className="flex w-full h-screen overflow-auto">
+        <SideBar list={List} id={id} anilistId= {anilist_id}/>
+        <div className="relative z-30 h-full w-full overflow-auto">
 
+        {
+          res.data.map(
+            (e:any) => (
+              
               <img src={e.img} alt="aaa" className="mx-auto"/>
-          )
-        )
-          }
+              )
+              )
+            }
+        </div>
       </div>
   );
 }
-
-export default page;
+export default Page
