@@ -27,4 +27,4 @@ Using the program at this stage is not recommended.</h2>
 - Design is heavily inspired by [Kitsune](https://kitsunee.me) and [Kaguya](https://kaguya.app)
 - Info from [Consumet.ts](https://consumet.org) (Anilist)
 
-<h3 align="center">Build with ❤️ and ⚖️</h3>
+<h3 align="center">Made with ❤️ and ⚖️ in Vietnam</h3>
