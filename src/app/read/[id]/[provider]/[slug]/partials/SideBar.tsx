@@ -29,17 +29,20 @@ const SideBar = ({list, anilistId, id} :any) => {
         >
             <div className="flex flex-col h-full w-full p-4 space-y-4">
                 <div className=" w-full items-center justify-between">
-                <FaBars onClick={toggle} className="cursor-pointer"/>
+                <FaBars
+                    size={20}
+                    onClick={toggle}
+                    className="cursor-pointer hover:text-primary"/>
                 <FaBackward
-          size={20}
-          className="hover:text-primary cursor-pointer mt-2"
-          onClick={onPrev}
-        />
-        <FaForward 
-          size= {20}
-          className="hover:text-primary cursor-pointer mt-2"
-          onClick={onNext}
-        />
+                    size={20}
+                    className="hover:text-primary cursor-pointer mt-2"
+                    onClick={onPrev}
+                />
+                <FaForward 
+                    size= {20}
+                    className="hover:text-primary cursor-pointer mt-2"
+                    onClick={onNext}
+                />
                 {isOpen && 
                 (
                 <div className="overflow-hidden font-semibold line-clamp-1"> Chap: {list.length - curIndex}</div>)}

@@ -1,11 +1,13 @@
 import React from "react";
 import useManga from "@/hooks/useManga";
 import { Metadata } from "next";
-import Bar from "./partials/Bar";
 import SideBar from "./partials/SideBar";
 type Props = {
-  params: {slug: string};
-  searchParams: { [key: string]: string};
+  params: {
+    slug: string, 
+    provider:string,
+    id: string
+  };
 };
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -15,11 +17,11 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   }; 
 }
-async function Page({params, searchParams}: Props) {
-  const anilist_id = params.slug;
-  const id = decodeURIComponent(searchParams.index)
+async function Page({params}: Props) {
+  const anilist_id = params.id;
+  const id = decodeURIComponent(params.slug)
   const {getInfo, getChapterManga} = useManga();
-  const info:any = await getInfo(anilist_id, "mangareader");
+  const info:any = await getInfo(anilist_id, params.provider);
   const list = info.data.chapters
   let List = []
   let index = 0;
@@ -30,7 +32,7 @@ async function Page({params, searchParams}: Props) {
     }
     while(index--)
       List.push(list[index])
-    const res:any = await getChapterManga(id, "mangareader")
+    const res:any = await getChapterManga(id, params.provider)
   return(
       <div className="flex w-full h-screen overflow-auto">
         <SideBar list={List} id={id} anilistId= {anilist_id}/>

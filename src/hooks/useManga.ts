@@ -26,7 +26,7 @@ export default function useManga(){
     })
     return data;
   }
-  async function getInfo(id: string, provider: string) {
+  async function getInfo(id: any, provider: string | null) {
     const data = await axios.get(API.info + "/" + id,{
       params:{
         provider

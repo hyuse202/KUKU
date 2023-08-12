@@ -2,7 +2,6 @@ import React from "react";
 import useManga from "@/hooks/useManga";
 import { Metadata } from "next";
 import ProviderList from "@/components/ProviderList"
-import ChapterList from "@/components/ChapterList";
 type Props = {
   params: { slug: string };
 };
@@ -68,7 +67,7 @@ async function page({params}: Props) {
       </div>
       <div className="flex flex-col w-full">
       <ProviderList />
-      <ChapterList list = {info.data.chapters} id = {params.slug}/>
+      {/* <ChapterList list = {info.data.chapters} id = {params.slug}/> */}
       </div>
     </section>
   );
