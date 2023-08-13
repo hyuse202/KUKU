@@ -6,7 +6,7 @@ type Props = {
   params: { slug: string };
 };
 
-const defaultSource = "mangareader"
+const defaultSource = "mangadex"
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.slug;
   const { getInfo } = useManga();

@@ -35,14 +35,14 @@ async function Page({params}: Props) {
     const res:any = await getChapterManga(id, params.provider)
   return(
       <div className="flex w-full h-screen overflow-auto">
-        <SideBar list={List} id={id} anilistId= {anilist_id}/>
+        <SideBar list={List} id={id} anilistId= {anilist_id} source={params.provider}/>
         <div className="relative z-30 h-full w-full overflow-auto">
 
         {
           res.data.map(
             (e:any) => (
               
-              <img src={e.img} alt="aaa" className="mx-auto"/>
+              <img src={`https://image.eltik.net/image-proxy?url=${encodeURIComponent(`${e.img}`)}&headers=${encodeURIComponent(JSON.stringify({ Referer: "https://mangadex.org" }))}`} alt="aaa" className="mx-auto"/>
               )
               )
             }

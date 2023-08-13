@@ -3,22 +3,20 @@ import { motion } from "framer-motion"
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import classNames from "classnames"
-import { useRouter } from "next/navigation";
 import { FaBackward, FaForward } from 'react-icons/fa'
 const transition = [0.33, 1, 0.68, 1];
 
-const SideBar = ({list, anilistId, id} :any) => {
-    const router = useRouter()
+const SideBar = ({list, anilistId, id, source} :any) => {
     const [isOpen, setOpen] = useState(false)
     const toggle = () => setOpen(!isOpen)
     const curIndex = list.findIndex((e:any) => e.id === id)
     const onPrev = () => {
     window.location.href = `
-    /read/mangareader/${anilistId}?index=${encodeURIComponent(list[curIndex + 1].id)}`
+    /read/${anilistId}/${source}/${encodeURIComponent(list[curIndex + 1].id)}`
   };
   const onNext = () => {
     window.location.href = `
-    /read/mangareader/${anilistId}?index=${encodeURIComponent(list[curIndex - 1].id)}`
+    /read/${anilistId}/${source}/${encodeURIComponent(list[curIndex - 1].id)}`
   };
     return(
         <motion.div
@@ -59,7 +57,7 @@ const SideBar = ({list, anilistId, id} :any) => {
                                 onClick={
                                      () => {
                                     window.location.href = `
-                                /read/mangareader/${anilistId}?index=${encodeURIComponent(e.id)}`
+                                /read/${anilistId}/${source}/${encodeURIComponent(e.id)}`
                                             }
                                 }
                                 >

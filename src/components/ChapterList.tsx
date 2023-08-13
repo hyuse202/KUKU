@@ -17,7 +17,6 @@ export default function ChapterList(){
           data = response.data
         }
         setChapters(data.chapters);
-        console.log(data.chapters)
     }
 
     fetchChapters();
@@ -38,7 +37,7 @@ export default function ChapterList(){
                   : "/"
                   )
                 }
-                className="w-[80%] cursor-pointer">{e.title}
+                className="w-[80%] cursor-pointer">Chap: {index + 1} {e.title}
                 </p>
               </span>
             )
