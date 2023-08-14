@@ -6,6 +6,7 @@
 <h2> Read manga simple and free. </br>
  Kuku is still in Development Stage.
 Using the program at this stage is not recommended.</h2>
+  <a href="https://kukumanga.site"> Official Website</a>
 </div>
 
 ## Table of contents
