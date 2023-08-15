@@ -7,7 +7,7 @@ type Props = {
 
 function UserMenu() {
   return (
-    <div className="dropdown dropdown-end lg:hidden">
+    <div className="dropdown dropdown-end bigp:hidden">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <Image src="/9x9.jpg" alt="avatar" width="50" height="50" />

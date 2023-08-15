@@ -15,7 +15,7 @@ export default function ProviderList(){
     return(
       <>
 
-        <div className="mt-8 flex items-center gap-4 w-full lg:w-1/2 mb-5 lg:mb-0">
+        <div className="mt-8 flex items-center gap-4 w-full bigp:w-1/2 mb-5 bigp:mb-0">
             <div className="ml-8 text-xl font-bold w-[50%]">List chapter </div>
           <p className="text-base font-semibold">Source</p>
           <select

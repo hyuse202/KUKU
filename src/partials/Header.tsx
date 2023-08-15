@@ -6,10 +6,10 @@ function Header() {
   return (
     <>
     <div className="">
-    <div className="navbar bg-gradient-to-b from-base-300 relative lg:top-0 lg:z-50">
+    <div className="navbar bg-gradient-to-b from-base-300 relative bigp:top-0 bigp:z-50">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost bigp:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -43,12 +43,12 @@ function Header() {
           <div className="flex items-center">
             <a
               href="/"
-              className={`${nightTokyo.className} pt-2 btn btn-ghost font-extrabold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-purple-600 tracking-widest`}
+              className={`${nightTokyo.className} pt-2 btn btn-ghost font-extrabold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-purple-500 tracking-widest`}
             >
               9x9
             </a>
           </div>
-          <ul className="menu menu-horizontal px-1 font-semibold hidden lg:flex">
+          <ul className="menu menu-horizontal px-1 font-semibold hidden bigp:flex">
             <li>
               <a href="/">Home</a>
             </li>
@@ -60,21 +60,21 @@ function Header() {
               </li>
           </ul>
         </div>
-        <div className="hidden w-full lg:flex">
+        <div className="hidden w-full bigp:flex">
           <div className="mr-1 w-full flex flex-row gap-4">
             <SearchAnime />
             <a
-              href="https://github.com/hyuse202"
+              href="https://github.com/hyuse202/KUKU"
               target="_blank"
             >
             <AiFillGithub className="inset-y-1" size={50}/>
             </a>
           </div>
         </div>
-        <div className="navbar-end gap-2 hidden lg:flex">
+        <div className="navbar-end gap-2 hidden bigp:flex">
         </div>
       </div>
-      <div className="lg:hidden">
+      <div className="bigp:hidden">
         <SearchAnime />
       </div>
       </div>

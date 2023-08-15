@@ -45,23 +45,23 @@ function CarouselSingle({
   description,
 }: CarouselSingleProps) {
   return (
-    <div id={`slide${id}`} className="relative w-full h-[300px] lg:h-[700px]">
+    <div id={`slide${id}`} className="relative w-full h-[300px] bigp:h-[450px]">
       <img
         src={src}
-        className="w-full h-full object-cover lg:opacity-50 opacity-30"
+        className="w-full h-full object-cover opacity-30"
       />
-      <div className="absolute flex flex-col text-start items-start space-y-5 lg:left-20 left-5 top-10 lg:top-1/3 w-1/2 h-3/4 overflow-hidden">
-        <div className="text-xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-pink-300">
+      <div className="absolute flex flex-col text-start items-start space-y-5 bigp:left-20 left-7 top-4 bigp:top-1/5 w-1/2 h-3/4 overflow-hidden">
+        <div className="text-xl bigp:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-purple-500">
           {title}
         </div>
         <div
-          className="font-normal text-base lg:text-md leading-relaxed line-clamp-6"
+          className="font-bold text-base bigp:text-md leading-relaxed line-clamp-6"
           dangerouslySetInnerHTML={{ __html: description }}
         ></div>
 
           <Link
             href={`/info/${encodeURIComponent(id)}`}
-            className="btn btn-sm btn-outline lg:btn-md"
+            className="btn btn-sm btn-outline bigp:btn-md"
           >
             Read Now
           </Link>

@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Roboto } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { Metadata } from "next";
 import Header from "@/partials/Header";
 import { Footer } from "@/partials/Footer";
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
 };
 
-const roboto = Roboto({ weight: "400", subsets: ["latin"] });
+const outfit = Outfit({ weight: "400", subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -43,7 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-    <html data-theme="night" lang="en" className={roboto.className}>
+    <html data-theme="night" lang="en" className={outfit.className}>
       <body>
         <Header />
         <div className="min-h-screen block">{children}</div>

@@ -49,7 +49,7 @@ function Search() {
             </svg>
           </span>
           <input
-            className="w-full bg-transparent placeholder:font-italitc rounded-lg py-2 pl-4 pr-12 focus:outline-none border-2 focus:border-white border-gray-400"
+            className="w-full bg-transparent placeholder:font-italitc rounded-2xl py-2 pl-4 pr-12 focus:outline-none border-2 focus:border-white border-gray-400"
             placeholder="Search Manga"
             type="text"
             value={search}
@@ -57,7 +57,7 @@ function Search() {
           />
         </label>
         <div className="absolute z-[99] w-full">
-          <div className="mt-1 bg-opacity-90 bg-base-100 shadow-lg rounded-lg w-full">
+          <div className="mt-1 bg-opacity-90 bg-base-100 shadow-lg rounded-2xl w-full">
             {(searchFilter.length === 0 && search !== "") || loading ? (
               <div className="flex w-full gap-5 p-10 items-center justify-center">
                 <Loading />
@@ -79,7 +79,7 @@ function Search() {
                   href={`/search?q=${encodeURIComponent(search)}`}
                   onClick={handleSearchCallback}
                 >
-                  More ...
+                  More  ...
                 </Link>
               </>
             ) : (
