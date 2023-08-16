@@ -22,7 +22,8 @@ Using the program at this stage is not recommended.</h2>
 - [Consumet.ts](https://consumet.org)
 
 ## Preview
-![image](https://github.com/hyuse202/KUKU/assets/99476925/8c9385de-1597-4a6b-a253-7aacde62066c)
+![image](https://github.com/hyuse202/KUKU/assets/99476925/8187502a-3286-4741-8afd-75675f7fc75e)
+
 
 
 ## Sources
