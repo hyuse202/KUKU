@@ -2,6 +2,7 @@ import React from "react";
 import useManga from "@/hooks/useManga";
 import { Metadata } from "next";
 import SideBar from "./partials/SideBar";
+import Display from "./partials/Display";
 type Props = {
   params: {
     slug: string, 
@@ -37,15 +38,7 @@ async function Page({params}: Props) {
       <div className="flex w-full h-screen overflow-auto">
         <SideBar list={List} id={id} anilistId= {anilist_id} source={params.provider}/>
         <div className="relative z-30 h-full w-full overflow-auto">
-
-        {
-          res.data.map(
-            (e:any) => (
-              
-              <img src={`https://image.eltik.net/image-proxy?url=${encodeURIComponent(`${e.img}`)}&headers=${encodeURIComponent(JSON.stringify({ Referer: "https://mangadex.org" }))}`} alt="aaa" className="mx-auto"/>
-              )
-              )
-            }
+          <Display chapter={res.data} info={info.data} />
         </div>
       </div>
   );
