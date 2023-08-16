@@ -22,7 +22,8 @@ Using the program at this stage is not recommended.</h2>
 - [Consumet.ts](https://consumet.org)
 
 ## Preview
-![image](https://github.com/hyuse202/KUKU/assets/99476925/84281098-af2e-46e7-9fd4-6e08bdd5c030)
+![image](https://github.com/hyuse202/KUKU/assets/99476925/8c9385de-1597-4a6b-a253-7aacde62066c)
+
 
 ## Sources
 - Design is heavily inspired by [Kitsune](https://kitsunee.me) and [Kaguya](https://kaguya.app)
