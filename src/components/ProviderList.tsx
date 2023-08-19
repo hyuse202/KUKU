@@ -19,7 +19,7 @@ export default function ProviderList({ chapters, anilistId }: any) {
   return (
     <>
       <div className="mt-8 flex items-center gap-4 w-full bigp:w-1/2 mb-5 bigp:mb-0">
-        <div className="ml-8 text-xl font-bold w-[50%]">List chapter </div>
+        <div className="bigp:ml-8 text-xl font-bold w-[50%]">List chapter </div>
         <p className="text-base font-semibold">Source</p>
         <select
           className="select select-bordered w-[60%] lg:w-[400px] max-w-xs select-sm"
@@ -35,7 +35,7 @@ export default function ProviderList({ chapters, anilistId }: any) {
           <option value="mangadex">Mangadex</option>
         </select>
       </div>
-      <div className="flex flex-col space-y-4 ml-8 mt-4 w-[50%] mb-8">
+      <div className="flex flex-col space-y-4 bigp:ml-8 mt-4 w-[50%] mb-8">
         {Object.keys(chapters.data[sourceIndex].chapters)?.map((e: any) => (
           <span className="align-center flex flex-row hover:bg-white/20 text-gray-200 transition duration-300 rounded p-[0_0.375rem]">
             <p

@@ -23,11 +23,11 @@ async function page({ params }: Props) {
   const { getInfo } = useManga();
   const info: any = await getInfo(id);
   return (
-    <section className="block h-full pt-4 w-full flex-col items-center overflow-x-hidden md:flex-row md:items-start">
-      <div className="flex flex-row space-x-8">
-        <img src={info.data.coverImage} className="rounded object-cover w-1/5 ml-8" />
+    <section className="block h-full bigp:w-3/4 mx-auto pt-4 flex-col items-center overflow-x-hidden md:flex-row md:items-start">
+      <div className="flex flex-col bigp:flex-row bigp:space-x-8">
+        <img src={info.data.coverImage} className="rounded object-cover bigp:ml-8 h-auto max-w-xs" />
 
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 ml-0">
           <p className="text-2xl font-semibold mt-4">{info.data.title.romaji}</p>
           <p className="">{info.data.title.english}</p>
           <div className="flex flex-wrap gap-4">
@@ -36,7 +36,7 @@ async function page({ params }: Props) {
             ))}
           </div>
           <p dangerouslySetInnerHTML={{ __html: info.data.description }}></p>
-          <div className="gap-x-16 flex flex-row">
+          <div className="gap-x-16 flex bigp:flex-row flex-wrap">
             <div>
               <p>Rate</p>
               <p>{info.data.rating.mal}</p>
@@ -46,7 +46,7 @@ async function page({ params }: Props) {
               <p>{info.data.year}</p>
             </div>
             <div>
-              <p>Stauts</p>
+              <p>Status</p>
               <p>{info.data.status}</p>
             </div>
             <div>

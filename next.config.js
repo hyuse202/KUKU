@@ -4,7 +4,7 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["i.waifu.pics"],
+    domains: ["https://img-proxy-moc9.onrender.com"],
   },
 };
 
