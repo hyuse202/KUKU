@@ -1,25 +1,24 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import SearchCard from "@/components/SearchCard";
-import useManga from "@/hooks/useManga";
-import Loading from "@/components/LoadingSingle";
-import Link from "next/link";
-import { ISearchAnime } from "@/@types/EnimeType";
+'use client';
+import React, { useState, useEffect } from 'react';
+import SearchCard from '@/components/SearchCard';
+import useManga from '@/hooks/useManga';
+import Loading from '@/components/LoadingSingle';
+import Link from 'next/link';
+import { ISearchAnime } from '@/@types/EnimeType';
 
 function Search() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [searchFilter, setSearchFilter] = useState<ISearchAnime[]>([]);
   const [loading, setLoading] = useState(false);
   const { getSearch } = useManga();
 
   useEffect(() => {
-    if (search === "") return setSearchFilter([]);
+    if (search === '') return setSearchFilter([]);
     const delayDebounceFn = setTimeout(async () => {
       setLoading(true);
       const data = await getSearch(search);
       setSearchFilter(data.data.results.slice(0, 4));
       setLoading(false);
-      
     }, 1000);
     return () => {
       clearTimeout(delayDebounceFn);
@@ -27,7 +26,7 @@ function Search() {
   }, [search]);
 
   const handleSearchCallback = () => {
-    setSearch("");
+    setSearch('');
     setSearchFilter([]);
   };
 
@@ -53,12 +52,12 @@ function Search() {
             placeholder="Search Manga"
             type="text"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={e => setSearch(e.target.value)}
           />
         </label>
         <div className="absolute z-[99] w-full">
           <div className="mt-1 bg-opacity-90 bg-base-100 shadow-lg rounded-2xl w-full">
-            {(searchFilter.length === 0 && search !== "") || loading ? (
+            {(searchFilter.length === 0 && search !== '') || loading ? (
               <div className="flex w-full gap-5 p-10 items-center justify-center">
                 <Loading />
               </div>
@@ -79,11 +78,11 @@ function Search() {
                   href={`/search?q=${encodeURIComponent(search)}`}
                   onClick={handleSearchCallback}
                 >
-                  More  ...
+                  More ...
                 </Link>
               </>
             ) : (
-              ""
+              ''
             )}
           </div>
         </div>

@@ -1,5 +1,5 @@
-import React from "react";
-import LoadingGIF from "@/assets/loading.gif";
+import React from 'react';
+import LoadingGIF from '@/assets/loading.gif';
 
 function Loading() {
   return (

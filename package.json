@@ -1,12 +1,13 @@
 {
   "name": "kuku-manga",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "private": true,
-  "scripts":{
+  "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@badrap/bar-of-progress": "^0.2.2",
@@ -26,6 +27,7 @@
     "html-react-parser": "^3.0.16",
     "next": "^13.4.13",
     "postcss": "8.4.23",
+    "prettier": "^3.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",

@@ -2,7 +2,7 @@ export type TEpisodeInfo = {
   headers: {
     Referer: string;
     watchsb: string;
-    "User-Agent": string;
+    'User-Agent': string;
   };
   sources: TEpisodeSources[];
   thumbnail?: string | null;

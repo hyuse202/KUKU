@@ -1,21 +1,21 @@
-"use client";
-import { useEffect, useRef } from "react";
+'use client';
+import { useEffect, useRef } from 'react';
 
 export default function AdBlock() {
   const banner = useRef<HTMLDivElement>(null);
 
   const atOptions = {
-    key: "5a8f69ac613772c8d1445a00d4ee12d5",
-    format: "iframe",
+    key: '5a8f69ac613772c8d1445a00d4ee12d5',
+    format: 'iframe',
     height: 250,
     width: 300,
     params: {},
   };
   useEffect(() => {
     if (banner.current && !banner.current.firstChild) {
-      const conf = document.createElement("script");
-      const script = document.createElement("script");
-      script.type = "text/javascript";
+      const conf = document.createElement('script');
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
       script.src = `//www.profitabledisplaynetwork.com/${atOptions.key}/invoke.js`;
       conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`;
 

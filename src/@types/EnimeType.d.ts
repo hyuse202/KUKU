@@ -58,7 +58,7 @@ export interface IRecentAnime {
   sources: Episodes[];
 }
 
-export type ISearchAnime = Omit<IAnime, "episodes" | "relations">;
+export type ISearchAnime = Omit<IAnime, 'episodes' | 'relations'>;
 
 export interface Title {
   native: string;
@@ -75,8 +75,8 @@ export interface Mappings {
   thetvdb: number;
   anisearch: number;
   livechart: number;
-  "notify.moe": string;
-  "anime-planet": string;
+  'notify.moe': string;
+  'anime-planet': string;
 }
 
 export interface Episode {

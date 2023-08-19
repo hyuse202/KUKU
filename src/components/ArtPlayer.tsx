@@ -1,6 +1,6 @@
-"use client";
-import Artplayer from "artplayer";
-import React, { useRef, useEffect } from "react";
+'use client';
+import Artplayer from 'artplayer';
+import React, { useRef, useEffect } from 'react';
 
 function ArtPlayer({ option, getInstance, ...rest }: any) {
   const artRef = useRef();
@@ -11,17 +11,17 @@ function ArtPlayer({ option, getInstance, ...rest }: any) {
       container: artRef.current,
     });
 
-    art.on("resize", () => {
+    art.on('resize', () => {
       art.subtitle.style({
-        fontSize: art.height * 0.05 + "px",
+        fontSize: art.height * 0.05 + 'px',
       });
     });
 
-    art.on("subtitleUpdate", (text) => {
+    art.on('subtitleUpdate', text => {
       art.template.$subtitle.innerHTML = text;
     });
 
-    if (getInstance && typeof getInstance === "function") {
+    if (getInstance && typeof getInstance === 'function') {
       getInstance(art);
     }
 
