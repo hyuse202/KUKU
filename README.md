@@ -11,6 +11,7 @@
 
 - [Technologies](#technologies)
 - [Preview](#preview)
+- [Installation](#installation)
 - [Thanks](#thanks)
 
 ## Technologies
@@ -24,8 +25,12 @@
 
 
 
+## Installation
+See [INSTALLATION.md](INSTALLATION.md) 
+
 ## Thanks
 - Design is heavily inspired by [Kitsune](https://kitsunee.me) and [Kaguya](https://kaguya.app)
 - Info from [Anify](https://anify.tv) and [Consumet](https://consumet.org) (Anilist)
 
 <h3 align="center">Made with ❤️ and ⚖️ in Vietnam</h3>
+
