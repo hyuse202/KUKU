@@ -24,7 +24,7 @@ export default function List() {
             key={animes[key].id}
             title={animes[key].title}
             src={animes[key].image}
-            additional="aa"
+            additional='aa'
             episodeId={animes[key].chapterId}
             hasRemoveBtn={true}
             delCb={() => onDelete(key)}

@@ -26,7 +26,7 @@ export default function AdBlock() {
 
   return (
     <div
-      className="mx-2 my-5 border border-gray-200 justify-center items-center text-white text-center"
+      className='mx-2 my-5 border border-gray-200 justify-center items-center text-white text-center'
       ref={banner}
     ></div>
   );

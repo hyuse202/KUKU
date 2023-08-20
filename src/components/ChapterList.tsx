@@ -25,18 +25,20 @@ export default async function ChapterList() {
     fetchChapters();
   }, []);
   return chapters ? (
-    <div className="flex flex-col space-y-4 ml-8 mt-4 w-[50%] mb-8">
+    <div className='flex flex-col space-y-4 ml-8 mt-4 w-[50%] mb-8'>
       {chapters?.map((e: any, index: number) => (
-        <span className="align-center flex flex-row hover:bg-white/20 text-gray-200 transition duration-300 rounded p-[0_0.375rem]">
+        <span className='align-center flex flex-row hover:bg-white/20 text-gray-200 transition duration-300 rounded p-[0_0.375rem]'>
           <p
             onClick={() =>
               router.push(
                 typeof window !== undefined
-                  ? `/read/${anilistId}/${localStorage.getItem('provider')}/${encodeURIComponent(e.id)}`
+                  ? `/read/${anilistId}/${localStorage.getItem(
+                      'provider',
+                    )}/${encodeURIComponent(e.id)}`
                   : '/',
               )
             }
-            className="w-[80%] cursor-pointer"
+            className='w-[80%] cursor-pointer'
           >
             Chap: {index + 1} {e.title}
           </p>

@@ -17,7 +17,7 @@ function ArtPlayer({ option, getInstance, ...rest }: any) {
       });
     });
 
-    art.on('subtitleUpdate', text => {
+    art.on('subtitleUpdate', (text) => {
       art.template.$subtitle.innerHTML = text;
     });
 

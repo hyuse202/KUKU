@@ -21,14 +21,14 @@ export async function generateMetadata(): Promise<Metadata> {
 async function Page({ params }: Props) {
   const anilist_id = params.id;
   const id = params.slug;
-  const { getInfo, getChapterManga } = useManga();
-  const info: any = await getInfo(anilist_id);
+  const { getChapters, getChapterManga } = useManga();
+  const info: any = await getChapters(anilist_id);
   const res: any = await getChapterManga(anilist_id, id, params.provider);
-  console.log(res.data[0]);
+  console.log(info.data);
   return (
-    <div className="flex w-full h-screen overflow-auto">
+    <div className='flex w-full h-screen overflow-auto'>
       {/* <SideBar list={List} id={id} anilistId= {anilist_id} source={params.provider}/> */}
-      <div className="relative z-30 h-full w-full overflow-auto">
+      <div className='relative z-30 h-full w-full overflow-auto'>
         {/* <Display chapter={res.data} info={info.data} /> */}
         {Object.keys(res.data).map((e: any) => (
           <div>
@@ -36,8 +36,10 @@ async function Page({ params }: Props) {
             <img
               src={`https://image.eltik.net/image-proxy?url=${encodeURIComponent(
                 `${res.data[e].url}`,
-              )}&headers=${encodeURIComponent(JSON.stringify({ Referer: 'https://mangadex.org' }))}`}
-              alt="aa"
+              )}&headers=${encodeURIComponent(
+                JSON.stringify({ Referer: `${res.data[e].Referer}` }),
+              )}`}
+              alt='aa'
             />
           </div>
         ))}

@@ -22,9 +22,11 @@ export default function Display({ chapter, info }: any) {
         <img
           src={`https://image.eltik.net/image-proxy?url=${encodeURIComponent(
             `${e.img}`,
-          )}&headers=${encodeURIComponent(JSON.stringify({ Referer: 'https://mangadex.org' }))}`}
-          alt="aaa"
-          className="mx-auto"
+          )}&headers=${encodeURIComponent(
+            JSON.stringify({ Referer: 'https://mangadex.org' }),
+          )}`}
+          alt='aaa'
+          className='mx-auto'
         />
       ))}
     </>

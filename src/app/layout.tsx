@@ -36,13 +36,17 @@ export const metadata: Metadata = {
 
 const outfit = Outfit({ weight: '400', subsets: ['latin'] });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
-      <html data-theme="night" lang="en" className={outfit.className}>
+      <html data-theme='night' lang='en' className={outfit.className}>
         <body>
           <Header />
-          <div className="min-h-screen block">{children}</div>
+          <div className='min-h-screen block'>{children}</div>
           <Footer />
         </body>
       </html>

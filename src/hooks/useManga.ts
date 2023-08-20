@@ -45,7 +45,11 @@ export default function useManga() {
     });
     return data;
   }
-  async function getChapterManga(anilistId: string, id: string, source: string) {
+  async function getChapterManga(
+    anilistId: string,
+    id: string,
+    source: string,
+  ) {
     const data = await axios.post(API.read + '?apikey=' + anifyKey, {
       id: anilistId,
       providerId: source,

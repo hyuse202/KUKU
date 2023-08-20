@@ -3,13 +3,13 @@ import LoadingGIF from '@/assets/loading.gif';
 
 function Loading() {
   return (
-    <div className="fixed w-screen h-screen top-0 bg-base-300 opacity-70">
+    <div className='fixed w-screen h-screen top-0 bg-base-300 opacity-70'>
       <img
         src={LoadingGIF.src}
-        alt="loading..."
+        alt='loading...'
         width={400}
         height={400}
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
       />
     </div>
   );

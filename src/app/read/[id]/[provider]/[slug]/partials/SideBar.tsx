@@ -20,21 +20,36 @@ const SideBar = ({ list, anilistId, id, source }: any) => {
   };
   return (
     <motion.div
-      className="flex-shrink-0 flex-grow-0 bg-base-300"
+      className='flex-shrink-0 flex-grow-0 bg-base-300'
       animate={{ width: isOpen ? '250px' : '55px' }}
       transition={{ ease: transition, duration: 0.4 }}
-      initial="initial"
+      initial='initial'
     >
-      <div className="flex flex-col h-full w-full p-4 space-y-4">
-        <div className=" w-full items-center justify-between">
-          <FaBars size={20} onClick={toggle} className="cursor-pointer hover:text-primary" />
-          <FaBackward size={20} className="hover:text-primary cursor-pointer mt-2" onClick={onPrev} />
-          <FaForward size={20} className="hover:text-primary cursor-pointer mt-2" onClick={onNext} />
+      <div className='flex flex-col h-full w-full p-4 space-y-4'>
+        <div className=' w-full items-center justify-between'>
+          <FaBars
+            size={20}
+            onClick={toggle}
+            className='cursor-pointer hover:text-primary'
+          />
+          <FaBackward
+            size={20}
+            className='hover:text-primary cursor-pointer mt-2'
+            onClick={onPrev}
+          />
+          <FaForward
+            size={20}
+            className='hover:text-primary cursor-pointer mt-2'
+            onClick={onNext}
+          />
           {isOpen && (
-            <div className="overflow-hidden font-semibold line-clamp-1"> Chap: {list.length - curIndex}</div>
+            <div className='overflow-hidden font-semibold line-clamp-1'>
+              {' '}
+              Chap: {list.length - curIndex}
+            </div>
           )}
           {isOpen && (
-            <ul className=" h-1/6 text-center overflow-auto bg-background-900">
+            <ul className=' h-1/6 text-center overflow-auto bg-background-900'>
               {list.map((e: any, index: number) => {
                 const isActive = curIndex === index;
                 return (
@@ -45,12 +60,14 @@ const SideBar = ({ list, anilistId, id, source }: any) => {
                     )}
                     onClick={() => {
                       window.location.href = `
-                                /read/${anilistId}/${source}/${encodeURIComponent(e.id)}`;
+                                /read/${anilistId}/${source}/${encodeURIComponent(
+                                  e.id,
+                                )}`;
                     }}
                   >
                     Chap: {list.length - index}
                     {curIndex == index && (
-                      <div className="absolute z-100 left-0 top-0 h-full w-1 bg-red-500"></div>
+                      <div className='absolute z-100 left-0 top-0 h-full w-1 bg-red-500'></div>
                     )}
                   </li>
                 );
