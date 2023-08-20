@@ -24,13 +24,26 @@ async function Page({ params }: Props) {
   const { getChapters, getChapterManga } = useManga();
   const info: any = await getChapters(anilist_id);
   const res: any = await getChapterManga(anilist_id, id, params.provider);
-  console.log(info.data);
+  let List: any = [];
+  let index = 0;
+  while(info.data[index] !== undefined)
+  {
+    let index0 = 0;
+    if(info.data[index].providerId === params.provider){
+      while(info.data[index].chapters[index0] !== undefined)
+        {
+          List.push(info.data[index].chapters[index0])
+          index0++;
+        }
+    }
+    index++;
+  }
   return (
     <div className='flex w-full h-screen overflow-auto'>
-      {/* <SideBar list={List} id={id} anilistId= {anilist_id} source={params.provider}/> */}
+      <SideBar list={List} id={id} anilistId= {anilist_id} source={params.provider}/>
       <div className='relative z-30 h-full w-full overflow-auto'>
-        {/* <Display chapter={res.data} info={info.data} /> */}
-        {Object.keys(res.data).map((e: any) => (
+        <Display chapter={res.data} info={info.data} />
+        {/* {Object.keys(res.data).map((e: any) => (
           <div>
             {' '}
             <img
@@ -42,7 +55,7 @@ async function Page({ params }: Props) {
               alt='aa'
             />
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );

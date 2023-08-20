@@ -38,7 +38,6 @@ export default function ProviderList({ chapters, anilistId }: any) {
               sourceIndex = convertObj.findIndex(
                 (key:any) => key.provider === selectOption,
               );
-              console.log(sourceIndex);
             }}
             options={convertObj.map((sup: any) => ({
               label: sup.provider,

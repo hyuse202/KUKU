@@ -45,7 +45,7 @@ const SideBar = ({ list, anilistId, id, source }: any) => {
           {isOpen && (
             <div className='overflow-hidden font-semibold line-clamp-1'>
               {' '}
-              Chap: {list.length - curIndex}
+              Chap: {list[curIndex].number}
             </div>
           )}
           {isOpen && (
@@ -65,7 +65,7 @@ const SideBar = ({ list, anilistId, id, source }: any) => {
                                 )}`;
                     }}
                   >
-                    Chap: {list.length - index}
+                    Chap: {e.number}
                     {curIndex == index && (
                       <div className='absolute z-100 left-0 top-0 h-full w-1 bg-red-500'></div>
                     )}
