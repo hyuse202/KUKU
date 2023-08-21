@@ -13,7 +13,7 @@
 - [Preview](#preview)
 - [Installation](#installation)
 - [Thanks](#thanks)
-
+- [Contributing](#contributing)
 ## Technologies
 
 - [NextJS](https://nextjs.org)
@@ -31,6 +31,12 @@ See [INSTALLATION.md](INSTALLATION.md)
 ## Thanks
 - Design is heavily inspired by [Kitsune](https://kitsunee.me) and [Kaguya](https://kaguya.app)
 - Info from [Anify](https://anify.tv) and [Consumet](https://consumet.org) (Anilist)
-
+## Contributing
+ We're looking to add more features to KUKU. You can see the this roadmap:
+  
+  - [ ] Authentication using next/auth
+  - [ ] UI/UX
+  - [ ] Comment session
+  - [ ] Counting views
 <h3 align="center">Made with ❤️ and ⚖️ in Vietnam</h3>
 
