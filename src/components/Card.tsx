@@ -24,6 +24,7 @@ function Card({
   delCb,
 }: Props) {
   const router = useRouter();
+  console.log(id);
   return (
     <motion.div
       className='relative w-[45%] h-[250px] smp:w-[30%] smp:h-[290px] bigp:w-[16%] bigp:h-[350px] rounded-lg hover:cursor-pointer'
@@ -42,7 +43,13 @@ function Card({
 
       <motion.div
         whileTap={{ scale: 0.9 }}
-        onClick={() => router.push(`/info/${encodeURIComponent(id)}`)}
+        onClick={() =>
+          router.push(
+            episodeId
+              ? `/read/${id}/${additional}/${episodeId}`
+              : `/info/${id}`,
+          )
+        }
       >
         <div className='flex flex-col space-y-5 bg-base-300 shadow-2xl relative'>
           <img
@@ -51,7 +58,7 @@ function Card({
             className='w-full h-[250px] smp:h-[290px] bigp:h-[350px] object-cover rounded-xl'
           />
           <div className='absolute bottom-0 p-1 flex flex-col w-full bg-gradient-to-b from-transparent to-violet-800'>
-            <div className='absolute rounded p-1 right-0 bottom-7 flex flex-row text-xs gap-1 font-bold items-baseline justify-end text-slate-100 bg-gradient-to-r from-orange-600 to-yellow-400'>
+            <div className='uppercase absolute rounded p-1 right-0 bottom-7 flex flex-row text-xs gap-1 font-bold items-baseline justify-end text-slate-100 bg-gradient-to-r from-orange-600 to-yellow-400'>
               <FaStar size={17} />
               {additional}
             </div>

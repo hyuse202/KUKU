@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Select from 'react-select';
 export default function ProviderList({ chapters, anilistId }: any) {
-  const [selectOption, setSelecOption] = useState<string>('mangadex');
+  const [selectOption, setSelecOption] = useState<string>('comick');
   let sourceIndex = 0;
   const router = useRouter();
   //Conver Chapters Object to array this so dumb
@@ -36,14 +36,15 @@ export default function ProviderList({ chapters, anilistId }: any) {
               setSelecOption(e.value);
               //@ts-ignore
               sourceIndex = convertObj.findIndex(
-                (key:any) => key.provider === selectOption,
+                (key: any) => key.provider === selectOption,
               );
             }}
+            placeholder='comick'
             options={convertObj.map((sup: any) => ({
               label: sup.provider,
               value: sup.provider,
             }))}
-            defaultValue={convertObj[0].provider}
+            defaultValue={'comick'}
             theme={(theme) => ({
               ...theme,
               colors: {
@@ -108,27 +109,12 @@ export default function ProviderList({ chapters, anilistId }: any) {
             }}
           />
         </div>
-        {/* <select
-          className="select select-bordered w-[60%] lg:w-[400px] max-w-xs select-sm"
-          onChange={e => {
-            localStorage.setItem('provider', e.target.value);
-            setSelecOption(e.target.value);
-            window.location.reload();
-          }}
-          value={typeof window !== 'undefined' ? localStorage.getItem('provider') ?? 'mangadex' : ''}
-        >
-          <option value="mangabuddy">MangaBuddy</option>
-          <option value="mangasee">Mangasee123</option>
-          <option value="mangadex">Mangadex</option>
-        </select> */}
       </div>
-      <div className='flex flex-col space-y-4 bigp:ml-8 mt-4 w-[50%] mb-8'>
-        {' '}
-        {selectOption}
+      <div className='flex flex-col space-y-4 bigp:ml-8 mt-2 w-[50%] mb-8'>
         {convertObj.map((e: any) =>
           e.provider === selectOption ? (
             e.chap.map((el: any) => (
-              <span className='align-center flex flex-row hover:bg-white/20 text-gray-200 transition duration-300 rounded p-[0_0.375rem]'>
+              <span className=' flex flex-row hover:bg-white/20 text-gray-200 transition duration-300 rounded p-[0_0.375rem]'>
                 <p
                   onClick={() =>
                     router.push(
@@ -147,7 +133,7 @@ export default function ProviderList({ chapters, anilistId }: any) {
               </span>
             ))
           ) : (
-            <div> </div>
+            <></>
           ),
         )}
       </div>

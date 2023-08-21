@@ -20,14 +20,14 @@ function Carousel({ spotlightInfo }: CarouselProps) {
       showIndicators={false}
       showStatus={false}
     >
-      {spotlightInfo.map((anime: any, index: number) => (
+      {spotlightInfo.map((manga: any, index: number) => (
         <CarouselSingle
           key={index}
-          id={anime.id}
-          src={anime.cover}
-          title={anime.title.english}
-          description={anime.description}
-          pop={anime.popularity}
+          id={manga.id}
+          src={manga.cover}
+          title={manga.title.english}
+          description={manga.description}
+          pop={manga.popularity}
         />
       ))}
     </ReactCarousel>

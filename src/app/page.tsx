@@ -4,24 +4,24 @@ import useManga from '@/hooks/useManga';
 
 export default async function Home() {
   const { getPopular, getTrending } = useManga();
-  const popularAnimes = await getPopular();
+  const popularMangas = await getPopular();
   const trendingMangas = await getTrending();
   return (
     <div>
-      <Carousel spotlightInfo={popularAnimes.data.results} />
+      <Carousel spotlightInfo={popularMangas.data.results} />
       <div className='xl:flex justify-between'>
         <div className='bigp:m-10 mt-10 flex flex-col items-center justify-center'>
           <p className='text-xl mb-10 uppercase font-bold text-violet-300 tracking-widest'>
             Recent Release
           </p>
           <div className='flex flex-wrap justify-center gap-3 bigp:gap-6 bigp:mx-24'>
-            {trendingMangas.data.results.map((anime: any, index: number) => (
+            {trendingMangas.data.results.map((manga: any, index: number) => (
               <Card
-                id={anime.id}
+                id={manga.id}
                 key={index}
-                title={anime.title.romaji}
-                src={anime.image}
-                additional={anime.rating}
+                title={manga.title.romaji}
+                src={manga.image}
+                additional={manga.rating}
               />
             ))}
           </div>
@@ -31,13 +31,13 @@ export default async function Home() {
             Popular Release
           </p>
           <div className='flex flex-wrap justify-center gap-3 bigp:mx-24 bigp:gap-6'>
-            {popularAnimes.data.results.map((anime: any, index: number) => (
+            {popularMangas.data.results.map((manga: any, index: number) => (
               <Card
-                id={anime.id}
+                id={manga.id}
                 key={index}
-                title={anime.title.romaji}
-                src={anime.image}
-                additional={anime.rating}
+                title={manga.title.romaji}
+                src={manga.image}
+                additional={manga.rating}
               />
             ))}
           </div>

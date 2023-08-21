@@ -63,13 +63,13 @@ function Search() {
               </div>
             ) : searchFilter.length > 0 ? (
               <>
-                {searchFilter.map((anime: any) => (
+                {searchFilter.map((manga: any) => (
                   <SearchCard
-                    key={anime.id}
-                    id={anime.id}
-                    title={anime.title.romaji}
-                    src={anime.image}
-                    additional={`Released: ${anime.year}`}
+                    key={manga.id}
+                    id={manga.id}
+                    title={manga.title.romaji}
+                    src={manga.image}
+                    additional={`Released: ${manga.year}`}
                     cb={handleSearchCallback}
                   />
                 ))}

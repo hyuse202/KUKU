@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchAnime from '@/partials/Search';
+import Searchmanga from '@/partials/Search';
 import { nightTokyo } from '@/utils/fonts';
 import { AiFillGithub } from 'react-icons/ai';
 function Header() {
@@ -62,7 +62,7 @@ function Header() {
           </div>
           <div className='hidden w-full bigp:flex'>
             <div className='mr-1 w-full flex flex-row gap-4'>
-              <SearchAnime />
+              <Searchmanga />
               <a href='https://github.com/hyuse202/KUKU' target='_blank'>
                 <AiFillGithub className='inset-y-1' size={50} />
               </a>
@@ -71,7 +71,7 @@ function Header() {
           <div className='navbar-end gap-2 hidden bigp:flex'></div>
         </div>
         <div className='bigp:hidden'>
-          <SearchAnime />
+          <Searchmanga />
         </div>
       </div>
     </>
