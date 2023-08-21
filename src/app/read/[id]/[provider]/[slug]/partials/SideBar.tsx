@@ -25,7 +25,7 @@ const SideBar = ({ list, anilistId, id, source }: any) => {
       transition={{ ease: transition, duration: 0.4 }}
       initial='initial'
     >
-      <div className='flex flex-col h-full w-full p-4 space-y-4'>
+      <div className='flex flex-col fixed h-full min-w-[content] p-4 space-y-4'>
         <div className=' w-full items-center justify-between'>
           <FaBars
             size={20}
@@ -45,11 +45,11 @@ const SideBar = ({ list, anilistId, id, source }: any) => {
           {isOpen && (
             <div className='overflow-hidden font-semibold line-clamp-1'>
               {' '}
-              Chap: {list[curIndex].number}
+              {/* Chap: {list[curIndex].number} */}
             </div>
           )}
           {isOpen && (
-            <ul className=' h-1/6 text-center overflow-auto bg-background-900'>
+            <ul className='h-1/6 w-[230px] text-center overflow-auto bg-background-900'>
               {list.map((e: any, index: number) => {
                 const isActive = curIndex === index;
                 return (

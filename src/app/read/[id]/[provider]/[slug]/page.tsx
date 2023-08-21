@@ -39,23 +39,10 @@ async function Page({ params }: Props) {
     index++;
   }
   return (
-    <div className='flex w-full h-screen overflow-auto'>
+    <div className='flex w-full overflow-auto'>
       <SideBar list={List} id={id} anilistId= {anilist_id} source={params.provider}/>
-      <div className='relative z-30 h-full w-full overflow-auto'>
+      <div className='relative z-30 h-full w-full'>
         <Display chapter={res.data} info={info.data} />
-        {/* {Object.keys(res.data).map((e: any) => (
-          <div>
-            {' '}
-            <img
-              src={`https://image.eltik.net/image-proxy?url=${encodeURIComponent(
-                `${res.data[e].url}`,
-              )}&headers=${encodeURIComponent(
-                JSON.stringify({ Referer: `${res.data[e].Referer}` }),
-              )}`}
-              alt='aa'
-            />
-          </div>
-        ))} */}
       </div>
     </div>
   );
